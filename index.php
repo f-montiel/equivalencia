@@ -1,36 +1,20 @@
- <!DOCTYPE html>
- <html>
- <head>
- 	<title>Equivalence</title>
- </head>
- <body>
- 	<h3>Equivalencias</h3>
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Equivalencias</title>
+</head>
+<body>
+	<h3>Unidades de Medida</h3>
+	<form action = "/longitud.php", method="POST">
+		<button tipe="button">Longitud</button>
+	</form>
 
- 	<!--Estan invertidos los nombres de umoutput y uminput mañana lo reviso, pero anda-->
+	<form method="POST" action="/volumen.php">
+		<button tipe="button">Volumen</button>
+	</form>
 
- 	<form action="/calcular.php", method="POST"> 
- 		<input type="number" name="cantidad">
- 		<select name="umoutput">
-  			<option value="Milimetro">Milimetro</option>
-		  	<option value="Decimetro">Decimetro</option>
-		  	<option value="Centimetro">Centimetro</option>
-		  	<option value="Metro">Metro</option>
-			<option value="Decametro">Decametro</option>
-			<option value="Hectometro">Hectometro</option>  
-			<option value="Kilometro">Kilometro</option>
-		</select>
- 		<label>a:</label>
- 		<select name="uminput">
-			<option value="Milimetro">Milimetro</option>
-			<option value="Decimetro">Decimetro</option>
-			<option value="Centimetro">Centimetro</option>
-			<option value="Metro">Metro</option>
-			<option value="Decametro">Decametro</option>
-			<option value="Hectometro">Hectometro</option>  
-			<option value="Kilometro">Kilometro</option>
- 		</select>
-
- 		<input type="submit" name="calcular" value="calcular">
- 	</form>
- </body>
- </html>
+	<form method="POST" action="/peso.php">
+		<button tipe="button">Peso</button>
+	</form>
+</body>
+</html>

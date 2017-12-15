@@ -1,70 +1,31 @@
 <?php 
 
-CLASS equivalencia
+CLASS Calculadora
 {
-	public $valorinput;
-	public $valoroutput;
-	public $descripcionoutput;
+	public $valorInput;
+	public $valorOutput;
 	public $cantidad;
 
-	public function Get()
+	public function set()
 	{
-		$uminput = $_POST [uminput];
+		$this->valorInput = $_POST [uminput];
+		$this->valorOutput = $_POST [umoutput];
+		$this->cantidad = $_POST [cantidad];
+	} 
 
-		if ($uminput == "Milimetro"){
-			$valorinput = 1;
-		}elseif ($uminput == "Decimetro"){
-			$valorinput = 2; 
-		} elseif ($uminput == "Centimetro"){
-			$valorinput = 3;
-		} elseif ($uminput == "Metro"){
-			$valorinput = 4;
-		} elseif ($uminput == "Decametro"){
-			$valorinput = 5;
-		} elseif ($uminput == "Hectometro"){
-			$valorinput = 6;
-		} else {
-			$valorinput = 7;
-		}
-		
-		$umoutput = $_POST [umoutput];
-
-		if ($umoutput == "Milimetro"){
-			$valoroutput = 1;
-		} elseif ($umoutput == "Decimetro" ){
-			$valoroutput = 2;
-		} elseif ($umoutput == "Centimetro"){
-			$valoroutput = 3;
-		} elseif ($umoutput == "Metro"){
-			$valoroutput = 4;
-		} elseif ($umoutput == "Decametro"){
-			$valoroutput = 5;
-		} elseif ($umoutput == "Hectometro"){
-			$valoroutput = 6;
-		} else {
-			$valorinput = 7;
-		}
-
-		$cantidad = $_POST [cantidad];
-		$descripcion = $_POST [uminput];
-		$this->valorinput = $valorinput;
-		$this->valoroutput = $valoroutput;
-		$this->cantidad = $cantidad;
-		$this->descripcionoutput = $descripcion;
-	}
-	
-	public function Calcular()
+	public function calcular()
 	{
-		if ($this->valorinput <= $this->valoroutput){
-			echo $this->cantidad * 10 ** ($this->valoroutput - $this->valorinput) . " " . $this->descripcionoutput;
+		if ($this->valorInput <= $this->valorOutput){
+			echo $this->cantidad * pow(10, ($this->valorOutput - $this->valorInput));
 			} else {
-				echo $this->cantidad / 10 ** ($this->valorinput - $this->valoroutput) . " " . $this->descripcionoutput;
+				echo $this->cantidad / pow(10, ($this->valorInput - $this->valorOutput));
 				;
 			}
 	}
 }
 
-$calculo = new equivalencia;
-$calculo->Get();
-$calculo->Calcular();
+$calculo = new Calculadora;
+$calculo->set();
+$calculo->calcular();
+
 ?>
